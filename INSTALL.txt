@@ -1,0 +1,51 @@
+==========================================
+GA4 Maccabi Tracking - הוראות התקנה
+==========================================
+
+שגיאה: "No valid plugins were found"
+--------------------------------------
+זה קורה כשמבנה ה-ZIP שגוי. WordPress מצפה שהתיקייה של הפלאגין תהיה ברמה הראשונה של ה-ZIP.
+
+
+אופציה 1: התקנה ידנית (מומלץ)
+--------------------------------
+1. העתק את כל התיקייה "ga4-maccabi-tracking" ל:
+   wp-content/plugins/
+
+2. ודא שהמבנה הוא:
+   wp-content/plugins/ga4-maccabi-tracking/ga4-maccabi-tracking.php
+   wp-content/plugins/ga4-maccabi-tracking/assets/js/ga4-tracking.js
+   wp-content/plugins/ga4-maccabi-tracking/README.txt
+
+3. היכנס ל"תוספים" והפעל "GA4 Maccabi Tracking"
+
+
+אופציה 2: יצירת ZIP נכון
+-------------------------
+חשוב: צריך לזאב את התיקייה "ga4-maccabi-tracking" עצמה (לא את ga4-maccabi!)
+
+ב-Windows:
+- לחץ ימני על התיקייה "ga4-maccabi-tracking"
+- "שלח אל" → "תיקייה דחוסה (zip)"
+- תקבל: ga4-maccabi-tracking.zip
+
+המבנה בתוך ה-ZIP חייב להיות:
+  ga4-maccabi-tracking/
+    ga4-maccabi-tracking.php
+    assets/
+      js/
+        ga4-tracking.js
+    README.txt
+
+לא:
+  ga4-maccabi/
+    ga4-maccabi-tracking/   ← שגוי! רמה עמוקה מדי
+      ...
+
+
+אופציה 3: העלאה דרך FTP
+-------------------------
+1. התחבר ל-FTP
+2. עבור אל wp-content/plugins/
+3. העלה את התיקייה ga4-maccabi-tracking (עם כל התוכן שלה)
+4. הפעל מהממשק

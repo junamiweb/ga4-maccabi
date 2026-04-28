@@ -1,5 +1,5 @@
-# מעלה את התוסף לתיקיית plugins דרך FTP
-name: Deploy WordPress Plugin to cPanel
+# מעלה את התוסף לשרת דרך SFTP
+name: Deploy WordPress Plugin via SFTP
 
 on:
   push:
@@ -14,13 +14,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload plugin
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Upload plugin via SFTP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: 63.250.61.124
-          username: myhelper@shop.maccabi.co.il
+          host: 63.250.61.124
+          username: myhelper
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
-          port: 21
-          protocol: ftps
-          local-dir: ./ga4-maccabi-tracking/
-          server-dir: /ga4-maccabi-tracking/
+          port: 22
+          source: "ga4-maccabi-tracking/*"
+          target: "/home/junami/public_html/ga4/wp-content/plugins/ga4-maccabi-tracking"
+          strip_components: 1

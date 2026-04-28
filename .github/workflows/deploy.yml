@@ -21,6 +21,6 @@ jobs:
           username: myhelper@shop.maccabi.co.il
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
           port: 21
-          protocol: ftp
+          protocol: ftps
           local-dir: ./ga4-maccabi-tracking/
           server-dir: /ga4-maccabi-tracking/

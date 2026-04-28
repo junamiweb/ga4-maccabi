@@ -20,7 +20,7 @@ jobs:
           host: 63.250.61.124
           username: junami
           password: ${{ secrets.CPANEL_SSH_PASSWORD }}
-          port: 2223
+          port: 22
           source: "ga4-maccabi-tracking/*"
           target: "/home/junami/public_html/ga4/wp-content/plugins/ga4-maccabi-tracking"
           strip_components: 1

@@ -1,4 +1,4 @@
-# מעלה את התוסף לשרת דרך SFTP
+# מעלה את התוסף לשרת דרך SFTP (SSH)
 name: Deploy WordPress Plugin via SFTP
 
 on:
@@ -18,8 +18,8 @@ jobs:
         uses: appleboy/scp-action@v0.1.7
         with:
           host: 63.250.61.124
-          username: myhelper
-          password: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          username: junami
+          password: ${{ secrets.CPANEL_SSH_PASSWORD }}
           port: 2223
           source: "ga4-maccabi-tracking/*"
           target: "/home/junami/public_html/ga4/wp-content/plugins/ga4-maccabi-tracking"

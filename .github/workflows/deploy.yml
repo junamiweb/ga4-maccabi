@@ -17,7 +17,7 @@ jobs:
       - name: Upload plugin to server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: shop.maccabi.co.il
+          server: 63.250.61.124
           username: myhelper@shop.maccabi.co.il
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
           port: 21

@@ -22,5 +22,5 @@ jobs:
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
           port: 21
           protocol: ftps
-          local-dir: ./ga4-maccabi-tracking/
-          server-dir: /home/junami/public_html/ga4/wp-content/plugins/ga4-maccabi-tracking/
+  local-dir: ./ga4-maccabi-tracking/
+  server-dir: /ga4-maccabi-tracking/

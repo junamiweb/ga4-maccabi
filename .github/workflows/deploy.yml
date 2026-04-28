@@ -1,0 +1,26 @@
+# מעלה את התוסף אוטומטית לאתר דרך FTP
+name: Deploy WordPress Plugin to cPanel (FTPS)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Upload plugin to server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.shop.maccabi.co.il
+          username: myhelper@shop.maccabi.co.il
+          password: ${{ secrets.CPANEL_FTP_PASSWORD }}
+          port: 21
+          protocol: ftp
+          local-dir: ./ga4-maccabi-tracking/
+          server-dir: /ga4/wp-content/plugins/ga4-maccabi-tracking/
